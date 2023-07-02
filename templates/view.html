@@ -1,0 +1,80 @@
+
+ <!DOCTYPE html>
+<html>
+<head>
+    <title>View Medicine Information</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+    <style>
+    body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.container h1 {
+    text-align: center;
+}
+
+.container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.container th,
+.container td {
+    padding: 8px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+.container th {
+    background-color: #f2f2f2;
+}
+
+.container tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+    </style>
+</head>
+<header>
+        <nav>
+            <ul>
+                <li><a href="/home">Home</a></li><br>
+               <br> <li><a href="/insert">Add medicine</a></li>
+              <li><a href="/delete">Delete medicine</a></li>
+                <li><a href="/view">View medicines</a></li>
+                <li><a href="/search">Search medicine</a></li>
+               <li><a href="/update">Update medicine</a></li>
+               <li><a href="/message">Send us Message </a></li>
+              
+              <li> <a onclick="return confirm('Are you sure to logout?');" class="nav-link" href="/logout">logout</a></li>
+            </ul>
+        </nav>
+    </header>
+<body>
+    <div class="container">
+        <h1>View Medicine Information</h1>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+            </tr>
+            {% for post in posts %}
+            <tr>
+                <td>{{ post[0]}}</td>
+                <td>{{ post[1] }}</td>          
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
+

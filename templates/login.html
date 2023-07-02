@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+
+  <link rel="stylesheet" href="{{ url_for('serve_css') }}">
+</head>
+<body>
+<div class="background-image" style="background-image: url('{{ url_for('serve_background') }}');">
+
+ <div class="container">
+         <img src="{{ url_for('serve_image') }}" alt="User Image">
+        <h2>Login</h2>
+        <form action="/login" method="POST">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+        {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+    </div>  
+    </form>
+    </div>
+</div>
+</body>
+</html>

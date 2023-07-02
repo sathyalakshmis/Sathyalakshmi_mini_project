@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home Page</title>
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+     
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/home">Home</a></li><br>
+               <br> <li><a href="/insert">Add medicine</a></li>
+              <li><a href="/delete">Delete medicine</a></li>
+                <li><a href="/view">View medicines</a></li>
+                <li><a href="/search">Search medicine</a></li>
+               <li><a href="/update">Update medicine</a></li>
+               <li><a href="/message">Send us Message </a></li>
+              
+              <li> <a onclick="return confirm('Are you sure to logout?');" class="nav-link" href="/logout">logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="background-image"></div>
+    <div class="content">
+     <h1>Hello, {{ username }}!</h2>
+        <h2>Welcome to the Medical Store</h1>
+        
+        <p>Operations like INSERT,UPDATE,DELETE,SEARCH AND SELECT can be done.</p>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete medicine</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+     
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .container h1 {
+            text-align: center;
+        }
+        .container form {
+            margin-top: 20px;
+        }
+        .container label, .container input {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        .container input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+    
+</head>
+<header>
+        <nav>
+            <ul>
+                <li><a href="/home">Home</a></li><br>
+               <br> <li><a href="/insert">Add medicine</a></li>
+              <li><a href="/delete">Delete medicine</a></li>
+                <li><a href="/view">View medicines</a></li>
+                <li><a href="/search">Search medicine</a></li>
+               <li><a href="/update">Update medicine</a></li>
+               <li><a href="/message">Send us Message </a></li>
+              
+              <li> <a onclick="return confirm('Are you sure to logout?');" class="nav-link" href="/logout">logout</a></li>
+            </ul>
+        </nav>
+    </header>
+<body>
+    <div class="container">
+    <h1>Delete medicine</h1>
+    <form method="POST" action="/delete">
+        <label for="id">Name:</label>
+        <input type="text" name="name" id="name" required><br>
+        
+        <input type="submit" value="Delete">
+    </form>
+     {% if deleted_id %}
+        <p class="success">Data with name: {{ deleted_id }} deleted successfully!</p>
+     {% endif %}
+    </div>
+</body>
+</html>
+
+
+
