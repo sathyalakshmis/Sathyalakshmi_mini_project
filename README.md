@@ -1,4 +1,4 @@
-# Sathyalakshmi_mini_project
+# Sathyalakshmi_mini_project C361 Wiley Edge
 PHARMACY management web based application done using flask.
 This is a mini project for C361 Wiley Edge.
 
